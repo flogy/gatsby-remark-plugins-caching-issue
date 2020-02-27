@@ -6,6 +6,15 @@
 
 module.exports = {
     plugins: [
-        `gatsby-plugin-mdx`,
+        {
+            resolve: `gatsby-plugin-mdx`,
+            options: {
+                gatsbyRemarkPlugins: [
+                    {
+                        resolve: require.resolve(`./plugins/some-sub-plugin`)
+                    }
+                ]
+            }
+        }
     ],
 }
